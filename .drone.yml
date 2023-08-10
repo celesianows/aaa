@@ -1,5 +1,5 @@
 pipeline:
   build:
-    image: python
+    image: alpine
     commands:
       - id && hostname
