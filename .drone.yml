@@ -1,21 +1,5 @@
-kind: pipeline
-name: deploy
-
-depends_on:
-  # Must run after the first pipeline
-  - run_tests
-
-trigger:
-  status:
-    # Only runs if the first pipeline was fully successful
-    - success
-
-steps:
-  - name: deploy
-    image: python:3.7.2
+pipeline:
+  build:
+    image: python
     commands:
-      - id & hostname
-    when:
-      branch: master
-      event:
-        - push
+      - id && hostname
